@@ -4,9 +4,10 @@ export class MainGame extends Scene {
   camera: Phaser.Cameras.Scene2D.Camera;
   background: Phaser.GameObjects.Image;
   msg_text: Phaser.GameObjects.Text;
+  new_text: Phaser.GameObjects.Text;
 
   constructor() {
-    super("Game");
+    super("MainGame");
   }
   preload() {
     this.load.image("vlastelin", "public/vlastelin.jpeg");
@@ -14,29 +15,32 @@ export class MainGame extends Scene {
   create() {
     const width = this.scale.width;
     const height = this.scale.height;
-    this.camera = this.cameras.main;
-    this.camera.setBackgroundColor("#0000");
 
     this.background = this.add.image(width * 0.5, height * 0.5, "vlastelin");
     this.background.setAlpha(1);
 
-    this.msg_text = this.add.text(
-      50,
-      50,
-      "Make something fun!\nand share it with us:\nsupport@phaser.io",
-      {
+    this.msg_text = this.add
+      .text(width * 0.5, height * 0.5, "hello", {
         fontFamily: "Arial Black",
         fontSize: 38,
         color: "#000",
         stroke: "#ffff",
         strokeThickness: 5,
         align: "center",
-      }
-    );
-    this.msg_text.setOrigin(0);
+      })
+      .setOrigin(0.0);
 
-    // this.input.once("pointerdown", () => {
-    //   this.scene.start("GameOver");
-    // });
+    this.new_text = this.add.text(width * 0.54, height * 0.6, "click me", {
+      fontFamily: "Arial Black",
+      fontSize: 38,
+      color: "#000",
+      stroke: "#ffff",
+      strokeThickness: 5,
+      align: "center",
+    });
+
+    this.input.once("pointerdown", () => {
+      this.scene.start("NextPage");
+    });
   }
 }
