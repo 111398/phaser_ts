@@ -8,7 +8,7 @@ export class NextPage extends Scene {
   }
 
   preload() {
-    this.load.image("billi", "public/billi.jpeg");
+    this.load.image("billi", "assets/billi.jpeg");
   }
 
   create() {

@@ -10,7 +10,7 @@ export class MainGame extends Scene {
     super("MainGame");
   }
   preload() {
-    this.load.image("vlastelin", "public/vlastelin.jpeg");
+    this.load.image("vlastelin", "assets/vlastelin.jpeg");
   }
   create() {
     const width = this.scale.width;
