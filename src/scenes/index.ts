@@ -1,3 +1,3 @@
-import { Kek } from "./kek";
+import { MainGame } from "./MainGame";
 
-export const scenes = [Kek];
+export const scenes = [MainGame];
