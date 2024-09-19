@@ -5,13 +5,20 @@ import "./style.scss";
 
 const config: Types.Core.GameConfig = {
   type: Phaser.AUTO,
-  width: "100%",
-  height: "100%",
+  width: 800,
+  height: 600,
   parent: "game-container",
   backgroundColor: "#000",
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
+  physics: {
+    default: "arcade",
+    arcade: {
+      gravity: { x: 0, y: 300 },
+      debug: false,
+    },
   },
   scene: scenes,
 };

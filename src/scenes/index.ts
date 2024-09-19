@@ -1,4 +1,5 @@
+import { DeadScene } from "./DeadScene";
 import { MainGame } from "./MainGame";
-import { NextPage } from "./NextPage";
+import { MainMenu } from "./MainMenu";
 
-export const scenes = [MainGame, NextPage];
+export const scenes = [MainMenu, MainGame, DeadScene];
